@@ -1,0 +1,48 @@
+# Cursor Rules per progetto Next.js
+
+## 🎯 Obiettivi del progetto
+- Sviluppare un sito web responsive moderno
+- Utilizzare Next.js 15 con App Router
+- Implementare design mobile-first con Tailwind CSS
+- Mantenere codice pulito e ben tipizzato con TypeScript
+
+## 📋 Regole di sviluppo
+- Usa sempre TypeScript per tutti i file
+- Preferisci componenti funzionali con hooks
+- Utilizza Tailwind CSS per lo styling
+- Mantieni componenti piccoli e riutilizzabili
+- Usa nomi descrittivi per variabili e funzioni
+- Commenta il codice complesso in italiano
+
+## 🎨 Stile del codice
+- Indentazione: 2 spazi
+- Semicolons: sì
+- Quotes: singole per stringhe
+- Naming: camelCase per variabili, PascalCase per componenti
+- Import: raggruppa per tipo (React, librerie esterne, componenti locali)
+
+## 📱 Responsive Design
+- Mobile-first approach
+- Breakpoints Tailwind: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Testa sempre su dispositivi mobili
+
+## 🔧 Struttura file
+```
+src/
+├── app/              # App Router pages
+├── components/       # Componenti riutilizzabili
+├── lib/             # Utility functions
+├── types/           # TypeScript types
+└── styles/          # CSS custom (se necessario)
+```
+
+## 🚀 Performance
+- Usa Next.js Image component per immagini
+- Implementa lazy loading dove appropriato
+- Ottimizza bundle size
+- Usa SSG/SSR quando possibile
+
+## 🧪 Testing
+- Scrivi codice testabile
+- Usa nomi descrittivi per test
+- Testa componenti isolatamente 
