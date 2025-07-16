@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "GitHub.vscode-pull-request-github",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "GitHub.vscode-github-actions"
+  ]
+} 

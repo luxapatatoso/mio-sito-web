@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Il Mio Sito Web
 
-## Getting Started
+Un sito web moderno, responsive e professionale creato con Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## ✨ Caratteristiche
 
+- **🎨 Design Moderno** - Interfaccia pulita e accattivante
+- **📱 Responsive** - Perfetto su tutti i dispositivi
+- **⚡ Performance** - Ottimizzato con Next.js 15
+- **🔒 Type Safety** - TypeScript per codice sicuro
+- **🎯 SEO Ready** - Ottimizzato per i motori di ricerca
+- **🚀 Deploy Ready** - Pronto per Vercel/Netlify
+
+## 🛠️ Tecnologie
+
+- **Next.js 15** - Framework React full-stack
+- **TypeScript** - Type safety e migliore DX
+- **Tailwind CSS** - Utility-first CSS framework
+- **React 18** - Libreria UI moderna
+- **ESLint** - Qualità del codice
+
+## 🚀 Come iniziare
+
+### Prerequisiti
+- Node.js 18+
+- npm o yarn
+
+### Installazione
 ```bash
+# Clona il repository
+git clone https://github.com/tuousername/mio-sito-web.git
+cd mio-sito-web
+
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Script utili
+```bash
+./avvia-server.sh    # Avvia server in background
+./stato-server.sh    # Controlla stato server
+./ferma-server.sh    # Ferma il server
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Struttura del progetto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # App Router (Next.js 13+)
+│   ├── page.tsx      # Home page
+│   ├── layout.tsx    # Layout globale
+│   └── globals.css   # Stili globali
+├── components/       # Componenti riutilizzabili
+├── lib/             # Utility functions
+└── types/           # TypeScript types
+```
 
-## Learn More
+## 🎨 Personalizzazione
 
-To learn more about Next.js, take a look at the following resources:
+### Colori
+Modifica i colori in `tailwind.config.js`:
+```js
+theme: {
+  extend: {
+    colors: {
+      primary: '#3B82F6',
+      secondary: '#1F2937',
+    }
+  }
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contenuti
+- **Home page**: `src/app/page.tsx`
+- **Layout**: `src/app/layout.tsx`
+- **Stili**: `src/app/globals.css`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 Responsive Design
 
-## Deploy on Vercel
+Il sito è ottimizzato per:
+- 📱 Mobile (320px+)
+- 📱 Tablet (768px+)
+- 💻 Desktop (1024px+)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Vercel (Raccomandato)
+```bash
+npm install -g vercel
+vercel
+```
+
+### Netlify
+```bash
+npm run build
+# Carica la cartella .next
+```
+
+## 🤝 Contribuire
+
+1. Fork il progetto
+2. Crea un branch (`git checkout -b feature/AmazingFeature`)
+3. Commit le modifiche (`git commit -m 'Add AmazingFeature'`)
+4. Push al branch (`git push origin feature/AmazingFeature`)
+5. Apri una Pull Request
+
+## 📄 Licenza
+
+Questo progetto è sotto licenza MIT - vedi il file [LICENSE](LICENSE) per dettagli.
+
+## 🙏 Ringraziamenti
+
+- [Next.js](https://nextjs.org/) - Framework React
+- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+- [Vercel](https://vercel.com/) - Hosting e Deploy
+
+---
+
+Creato con ❤️ usando Next.js, TypeScript e Tailwind CSS
