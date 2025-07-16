@@ -1,194 +1,262 @@
 
 
 import { AnimatedSection, AnimatedCard, AnimatedButton, AnimatedIcon } from '@/components/AnimatedSection';
+import Header from '@/components/Header';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
+import { motion } from 'framer-motion';
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header/Navigation */}
-      <header className="bg-white shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Il Mio Sito</h1>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#home" className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                <a href="#chi-siamo" className="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Chi Siamo</a>
-                <a href="#servizi" className="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Servizi</a>
-                <a href="#contatti" className="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contatti</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+  const services = [
+    {
+      icon: "🛡️",
+      title: "RSPP",
+      description: "Responsabile del Servizio di Prevenzione e Protezione",
+      color: "bg-primary-100",
+      iconColor: "text-primary-600"
+    },
+    {
+      icon: "🔥",
+      title: "Antincendio",
+      description: "Formazione antincendio e gestione emergenze",
+      color: "bg-danger-100",
+      iconColor: "text-danger-600"
+    },
+    {
+      icon: "🍽️",
+      title: "Sicurezza Alimentare",
+      description: "HACCP e formazione per settore alimentare",
+      color: "bg-secondary-100",
+      iconColor: "text-secondary-600"
+    },
+    {
+      icon: "⚡",
+      title: "E-Learning",
+      description: "Corsi online certificati e flessibili",
+      color: "bg-accent-100",
+      iconColor: "text-accent-600"
+    }
+  ];
 
+  const testimonials = [
+    {
+      name: "Marco Rossi",
+      role: "RSPP - Azienda Metalmeccanica",
+      content: "Carat Servizi ha gestito tutta la formazione della nostra azienda con professionalità e competenza. Consigliatissimi!",
+      rating: 5
+    },
+    {
+      name: "Laura Bianchi",
+      role: "HR Manager - Settore Alimentare",
+      content: "Ottima esperienza con i corsi di sicurezza alimentare. Personale preparato e servizio impeccabile.",
+      rating: 5
+    },
+    {
+      name: "Giuseppe Verdi",
+      role: "Datore di Lavoro - Edilizia",
+      content: "Formazione antincendio eccellente. I nostri dipendenti sono ora preparati per ogni emergenza.",
+      rating: 5
+    }
+  ];
+
+  const certifications = [
+    { name: "UNI EN ISO 9001", code: "IT19/0711" },
+    { name: "Ente Accreditato", code: "Regione Veneto 3718" },
+    { name: "30+ Anni", code: "di Esperienza" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-primary-50">
+      <Header />
+      
       {/* Hero Section */}
       <AnimatedSection>
-        <section id="home" className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <AnimatedSection delay={0.2}>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Benvenuto nel mio
-                <span className="text-blue-600"> sito web</span>
-              </h1>
-            </AnimatedSection>
-            <AnimatedSection delay={0.4}>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Un sito web moderno, responsive e professionale creato con Next.js, 
-                TypeScript e Tailwind CSS.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.6}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AnimatedButton className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                  Inizia Ora
-                </AnimatedButton>
-                <AnimatedButton className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  Scopri di Più
-                </AnimatedButton>
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div className="space-y-8">
+                <AnimatedSection delay={0.2}>
+                  <h1 className="text-4xl md:text-6xl font-bold text-neutral-800 leading-tight">
+                    Formazione obbligatoria per la tua{' '}
+                    <span className="text-primary-600">azienda</span>
+                  </h1>
+                </AnimatedSection>
+                
+                <AnimatedSection delay={0.4}>
+                  <p className="text-xl text-neutral-600 leading-relaxed">
+                    Carat Servizi è l'ente di formazione accreditato che ti accompagna 
+                    nella gestione della sicurezza e formazione obbligatoria per legge.
+                  </p>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.6}>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <AnimatedButton className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                      Richiedi Preventivo
+                    </AnimatedButton>
+                    <AnimatedButton className="border-2 border-primary-500 text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg">
+                      Vedi Calendario
+                    </AnimatedButton>
+                  </div>
+                </AnimatedSection>
               </div>
-            </AnimatedSection>
+
+              {/* Form */}
+              <AnimatedSection delay={0.8}>
+                <div className="bg-white rounded-2xl shadow-xl p-8">
+                  <h3 className="text-2xl font-bold text-neutral-800 mb-6">
+                    Richiedi informazioni
+                  </h3>
+                  <ContactForm />
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
       </AnimatedSection>
 
-      {/* Chi Siamo Section */}
-      <section id="chi-siamo" className="py-20 bg-white">
+      {/* Certifications Banner */}
+      <AnimatedSection>
+        <section className="py-8 bg-gradient-to-r from-primary-600 to-secondary-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={cert.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="text-white"
+                >
+                  <div className="text-2xl font-bold">{cert.name}</div>
+                  <div className="text-primary-100">{cert.code}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Chi Siamo
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+                I Nostri Servizi
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Siamo un team appassionato di sviluppatori web che crea 
-                esperienze digitali straordinarie.
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                Formazione completa e certificata per tutti i settori aziendali
               </p>
             </div>
           </AnimatedSection>
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedCard delay={0.2}>
-              <AnimatedIcon delay={0.3}>🎨</AnimatedIcon>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Design Creativo</h3>
-              <p className="text-gray-600">Creiamo design unici e accattivanti che catturano l'attenzione.</p>
-            </AnimatedCard>
-            <AnimatedCard delay={0.4}>
-              <AnimatedIcon delay={0.5} className="bg-green-100">⚡</AnimatedIcon>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Performance</h3>
-              <p className="text-gray-600">Siti web veloci e ottimizzati per la migliore esperienza utente.</p>
-            </AnimatedCard>
-            <AnimatedCard delay={0.6}>
-              <AnimatedIcon delay={0.7} className="bg-purple-100">📱</AnimatedIcon>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Responsive</h3>
-              <p className="text-gray-600">Perfetto su tutti i dispositivi: desktop, tablet e mobile.</p>
-            </AnimatedCard>
-          </div>
-        </div>
-      </section>
 
-      {/* Servizi Section */}
-      <section id="servizi" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              I Nostri Servizi
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Offriamo soluzioni complete per il tuo business digitale.
-            </p>
-          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Sviluppo Web", description: "Siti web moderni e performanti", icon: "🌐" },
-              { title: "E-commerce", description: "Negozi online completi", icon: "🛒" },
-              { title: "App Mobile", description: "Applicazioni native e cross-platform", icon: "📱" },
-              { title: "SEO", description: "Ottimizzazione per i motori di ricerca", icon: "🔍" }
-            ].map((service, index) => (
-              <AnimatedCard key={index} delay={index * 0.1}>
-                <div className="text-3xl mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+            {services.map((service, index) => (
+              <AnimatedCard key={service.title} delay={index * 0.1}>
+                <div className={`w-16 h-16 ${service.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <span className={`text-2xl ${service.iconColor}`}>{service.icon}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-neutral-800 mb-2">{service.title}</h3>
+                <p className="text-neutral-600">{service.description}</p>
               </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contatti Section */}
-      <section id="contatti" className="py-20 bg-white">
+      {/* Why Choose Us */}
+      <section className="py-20 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Contattaci
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Pronto a trasformare la tua idea in realtà? Parliamone!
-            </p>
-          </div>
-          <div className="max-w-lg mx-auto">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  id="nome"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Il tuo nome"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="la-tua-email@esempio.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="messaggio" className="block text-sm font-medium text-gray-700 mb-2">
-                  Messaggio
-                </label>
-                <textarea
-                  id="messaggio"
-                  rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Raccontaci il tuo progetto..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Invia Messaggio
-              </button>
-            </form>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+                Perché Scegliere Carat Servizi
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                Oltre 30 anni di esperienza nel settore della formazione e sicurezza
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <AnimatedCard delay={0.2}>
+              <AnimatedIcon delay={0.3}>🏆</AnimatedIcon>
+              <h3 className="text-xl font-semibold text-neutral-800 mb-2">Accreditamento</h3>
+              <p className="text-neutral-600">Ente accreditato dalla Regione Veneto per la formazione continua aziendale.</p>
+            </AnimatedCard>
+            <AnimatedCard delay={0.4}>
+              <AnimatedIcon delay={0.5} className="bg-secondary-100">⚡</AnimatedIcon>
+              <h3 className="text-xl font-semibold text-neutral-800 mb-2">Flessibilità</h3>
+              <p className="text-neutral-600">Corsi in aula e online, calendario flessibile per le tue esigenze.</p>
+            </AnimatedCard>
+            <AnimatedCard delay={0.6}>
+              <AnimatedIcon delay={0.7} className="bg-primary-100">📋</AnimatedIcon>
+              <h3 className="text-xl font-semibold text-neutral-800 mb-2">Compliance</h3>
+              <p className="text-neutral-600">Formazione conforme alle normative vigenti e sempre aggiornata.</p>
+            </AnimatedCard>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      {/* Testimonials */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">Il Mio Sito</h3>
-            <p className="text-gray-400 mb-6">
-              Creato con ❤️ usando Next.js, TypeScript e Tailwind CSS
-            </p>
-            <div className="flex justify-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white">Privacy</a>
-              <a href="#" className="text-gray-400 hover:text-white">Termini</a>
-              <a href="#" className="text-gray-400 hover:text-white">Cookie</a>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+                Cosa Dicono i Nostri Clienti
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                La soddisfazione dei nostri clienti è la nostra priorità
+              </p>
             </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedCard key={testimonial.name} delay={index * 0.2}>
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-accent-500">⭐</span>
+                  ))}
+                </div>
+                <p className="text-neutral-600 mb-4 italic">"{testimonial.content}"</p>
+                <div>
+                  <div className="font-semibold text-neutral-800">{testimonial.name}</div>
+                  <div className="text-sm text-neutral-500">{testimonial.role}</div>
+                </div>
+              </AnimatedCard>
+            ))}
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Pronto a Formare la Tua Azienda?
+            </h2>
+            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+              Contattaci per un preventivo personalizzato e inizia subito la formazione obbligatoria
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <AnimatedButton className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                Richiedi Preventivo
+              </AnimatedButton>
+              <AnimatedButton className="bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg">
+                Chiamaci Ora
+              </AnimatedButton>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      
+      <Footer />
     </div>
   );
 }
