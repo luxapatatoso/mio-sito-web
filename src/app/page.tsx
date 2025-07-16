@@ -4,7 +4,6 @@ import { AnimatedSection, AnimatedCard, AnimatedButton, AnimatedIcon } from '@/c
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
 
 export default function Home() {
   const services = [
@@ -117,27 +116,20 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Certifications Banner */}
-      <AnimatedSection>
-        <section className="py-8 bg-gradient-to-r from-primary-600 to-secondary-600">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={cert.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="text-white"
-                >
+      <section className="py-8 bg-gradient-to-r from-primary-600 to-secondary-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            {certifications.map((cert, index) => (
+              <AnimatedSection key={cert.name} delay={index * 0.2}>
+                <div className="text-white">
                   <div className="text-2xl font-bold">{cert.name}</div>
                   <div className="text-primary-100">{cert.code}</div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-20 bg-white">

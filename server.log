@@ -359,3 +359,32 @@ https://nextjs.org/docs/messages/module-not-found
 }
  GET / 500 in 205ms
  GET /favicon.ico 200 in 214ms
+ ⨯ [Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.] {
+  digest: '1603652798'
+}
+ GET / 500 in 156ms
+[TypeError: controller[kState].transformAlgorithm is not a function]
+ ⨯ [Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.] {
+  digest: '1603652798'
+}
+ GET / 500 in 148ms
+[10135:0717/061334.595338:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[10135:0717/061334.595366:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+(node:10135) [DEP0168] DeprecationWarning: Uncaught N-API callback exception detected, please run node with option --force-node-api-uncaught-exceptions-policy=true to handle those exceptions properly.
+(Use `Cursor --trace-deprecation ...` to show where the warning was created)
+[10142:0717/061343.203914:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[10142:0717/061343.203943:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+(node:10142) [DEP0168] DeprecationWarning: Uncaught N-API callback exception detected, please run node with option --force-node-api-uncaught-exceptions-policy=true to handle those exceptions properly.
+(Use `Cursor --trace-deprecation ...` to show where the warning was created)
+[10149:0717/061349.284624:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+[10149:0717/061349.284655:ERROR:node_bindings.cc(381)] Most NODE_OPTIONs are not supported in packaged apps. See documentation for more details.
+(node:10149) [DEP0168] DeprecationWarning: Uncaught N-API callback exception detected, please run node with option --force-node-api-uncaught-exceptions-policy=true to handle those exceptions properly.
+(Use `Cursor --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled / in 70ms
+ GET / 200 in 218ms
+ GET / 200 in 216ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 231ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 217ms
+ ✓ Compiled / in 12ms
+ GET / 200 in 64ms
+ GET / 200 in 27ms
