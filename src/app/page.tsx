@@ -1,5 +1,7 @@
 
 
+import { AnimatedSection, AnimatedCard, AnimatedButton, AnimatedIcon } from '@/components/AnimatedSection';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -23,61 +25,65 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Benvenuto nel mio
-            <span className="text-blue-600"> sito web</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Un sito web moderno, responsive e professionale creato con Next.js, 
-            TypeScript e Tailwind CSS.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              Inizia Ora
-            </button>
-            <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-              Scopri di Più
-            </button>
+      <AnimatedSection>
+        <section id="home" className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <AnimatedSection delay={0.2}>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Benvenuto nel mio
+                <span className="text-blue-600"> sito web</span>
+              </h1>
+            </AnimatedSection>
+            <AnimatedSection delay={0.4}>
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Un sito web moderno, responsive e professionale creato con Next.js, 
+                TypeScript e Tailwind CSS.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <AnimatedButton className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                  Inizia Ora
+                </AnimatedButton>
+                <AnimatedButton className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                  Scopri di Più
+                </AnimatedButton>
+              </div>
+            </AnimatedSection>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Chi Siamo Section */}
       <section id="chi-siamo" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Chi Siamo
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Siamo un team appassionato di sviluppatori web che crea 
-              esperienze digitali straordinarie.
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Chi Siamo
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Siamo un team appassionato di sviluppatori web che crea 
+                esperienze digitali straordinarie.
+              </p>
+            </div>
+          </AnimatedSection>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎨</span>
-              </div>
+            <AnimatedCard delay={0.2}>
+              <AnimatedIcon delay={0.3}>🎨</AnimatedIcon>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Design Creativo</h3>
               <p className="text-gray-600">Creiamo design unici e accattivanti che catturano l'attenzione.</p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
+            </AnimatedCard>
+            <AnimatedCard delay={0.4}>
+              <AnimatedIcon delay={0.5} className="bg-green-100">⚡</AnimatedIcon>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Performance</h3>
               <p className="text-gray-600">Siti web veloci e ottimizzati per la migliore esperienza utente.</p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📱</span>
-              </div>
+            </AnimatedCard>
+            <AnimatedCard delay={0.6}>
+              <AnimatedIcon delay={0.7} className="bg-purple-100">📱</AnimatedIcon>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Responsive</h3>
               <p className="text-gray-600">Perfetto su tutti i dispositivi: desktop, tablet e mobile.</p>
-            </div>
+            </AnimatedCard>
           </div>
         </div>
       </section>
@@ -100,11 +106,11 @@ export default function Home() {
               { title: "App Mobile", description: "Applicazioni native e cross-platform", icon: "📱" },
               { title: "SEO", description: "Ottimizzazione per i motori di ricerca", icon: "🔍" }
             ].map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <AnimatedCard key={index} delay={index * 0.1}>
                 <div className="text-3xl mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
         </div>
